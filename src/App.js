@@ -2,11 +2,11 @@ import { LargeAuthorListItem } from './components/authors/LargeListItems';
 import { SmallAuthorListItem } from './components/authors/SmallListItems';
 import { SmallBookListItem } from './components/books/SmallListItems';
 import { RegularList } from './components/lists/Regular';
-import { NumberedList } from './components/lists/Numbered';
 
 import { authors } from './data/authors';
 import { books } from './data/books';
 import { LargeBookListItem } from './components/books/LargeListItems';
+import { NumberedList } from './components/lists/Numbered.jsx';
 
 function App() {
   return (
