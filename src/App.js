@@ -1,14 +1,11 @@
-import { books } from './data/books';
-import { LargeBookListItem } from './components/books/LargeListItems';
-import { Modal } from './components/Modal';
+import { CurrectUserLoader } from './components/current-user-loader';
+import { UserInfo } from './components/user-info';
 
 function App() {
   return (
-    <>
-      <Modal>
-        <LargeBookListItem book={books[0]} />
-      </Modal>
-    </>
+    <CurrectUserLoader>
+      <UserInfo />
+    </CurrectUserLoader>
   );
 }
 
