@@ -1,11 +1,11 @@
-import { CurrectUserLoader } from './components/current-user-loader';
+import { ResourceLoader } from './components/resource-loader';
 import { UserInfo } from './components/user-info';
 
 function App() {
   return (
-    <CurrectUserLoader>
+    <ResourceLoader resourceUrl={'/users/2'} resourceName={'user'}>
       <UserInfo />
-    </CurrectUserLoader>
+    </ResourceLoader>
   );
 }
 
