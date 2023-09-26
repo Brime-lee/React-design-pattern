@@ -1,14 +1,11 @@
-import { books } from './data/books';
-import { LargeBookListItem } from './components/books/LargeListItems';
-import { Modal } from './components/Modal';
+import { ResourceLoader } from './components/resource-loader';
+import { UserInfo } from './components/user-info';
 
 function App() {
   return (
-    <>
-      <Modal>
-        <LargeBookListItem book={books[0]} />
-      </Modal>
-    </>
+    <ResourceLoader resourceUrl={'/users/2'} resourceName={'user'}>
+      <UserInfo />
+    </ResourceLoader>
   );
 }
 

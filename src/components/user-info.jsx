@@ -1,6 +1,6 @@
-export const LargeAuthorListItem = ({ author }) => {
-  const { name, age, country, books } = author;
-  return (
+export const UserInfo = ({ user }) => {
+  const { name, age, country, books } = user || {};
+  return user ? (
     <>
       <h2>{name}</h2>
       <p>age:{age}</p>
@@ -12,5 +12,7 @@ export const LargeAuthorListItem = ({ author }) => {
         })}
       </ul>
     </>
+  ) : (
+    <h1>Loading...</h1>
   );
 };
