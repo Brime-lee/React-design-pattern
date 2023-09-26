@@ -1,11 +1,13 @@
-import { ResourceLoader } from './components/resource-loader';
-import { UserInfo } from './components/user-info';
+import { ControlledForm } from './components/controlled-form';
+import { UncontrolledForm } from './components/uncontrolled-form';
 
 function App() {
   return (
-    <ResourceLoader resourceUrl={'/users/2'} resourceName={'user'}>
-      <UserInfo />
-    </ResourceLoader>
+    <>
+      <h1>Start here</h1>
+      {/* <UncontrolledForm /> */}
+      <ControlledForm />
+    </>
   );
 }
 
