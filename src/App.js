@@ -1,11 +1,24 @@
-import { ResourceLoader } from './components/resource-loader';
-import { UserInfo } from './components/user-info';
+import { SplitScreen } from './components/split-screen';
+
+const LeftSideComp = ({ title }) => {
+  return <h2 style={{ backgroundColor: 'red' }}>I am {title}</h2>;
+};
+const RightSideComp = ({ title }) => {
+  return <h2 style={{ backgroundColor: 'green' }}>I am {title}</h2>;
+};
 
 function App() {
   return (
-    <ResourceLoader resourceUrl={'/users/2'} resourceName={'user'}>
-      <UserInfo />
-    </ResourceLoader>
+    // <SplitScreen
+    //   Left={LeftSideComp}
+    //   Right={RightSideComp}
+    //   leftWidth={1}
+    //   rightWidth={3}
+    // />
+    <SplitScreen leftWidth={1} rightWidth={3}>
+      <LeftSideComp title={'left'} />
+      <RightSideComp title={'right'} />
+    </SplitScreen>
   );
 }
 
