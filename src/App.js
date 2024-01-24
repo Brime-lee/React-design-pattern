@@ -1,13 +1,25 @@
-import { ControlledForm } from './components/controlled-form';
-import { UncontrolledForm } from './components/uncontrolled-form';
+import { SplitScreen } from './components/split-screen';
+
+const LeftSideComp = ({ title }) => {
+  return <h2 style={{ backgroundColor: 'red' }}>I am {title}</h2>;
+};
+const RightSideComp = ({ title }) => {
+  return <h2 style={{ backgroundColor: 'green' }}>I am {title}</h2>;
+};
 
 function App() {
   return (
-    <>
-      <h1>Start here</h1>
-      {/* <UncontrolledForm /> */}
-      <ControlledForm />
-    </>
+    // <SplitScreen
+    //   Left={LeftSideComp}
+    //   Right={RightSideComp}
+    //   leftWidth={1}
+    //   rightWidth={3}
+    // />
+    <SplitScreen leftWidth={1} rightWidth={3}>
+      <LeftSideComp title={'left'} />
+      <RightSideComp title={'right'} />
+    </SplitScreen>
+
   );
 }
 
