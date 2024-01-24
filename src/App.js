@@ -19,6 +19,7 @@ function App() {
       <LeftSideComp title={'left'} />
       <RightSideComp title={'right'} />
     </SplitScreen>
+
   );
 }
 
