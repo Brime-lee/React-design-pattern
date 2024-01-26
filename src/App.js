@@ -28,7 +28,7 @@ function App() {
       {/* <DataSourceWIthRender
         getData={() => getDataFromServer('/users/2')}
         render={(resource) => <UserInfo user={resource} />}
-      ></DataSourceWIthRender> */}
+      ></DataSourceWIthRender>*/}
 
       <DataSource
         getData={() => getDataFromLocalStorage('test')}
