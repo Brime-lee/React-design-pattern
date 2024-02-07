@@ -1,7 +1,8 @@
-import { ControlledForm } from './components/controlled-form';
-import { UncontrolledForm } from './components/uncontrolled-form';
+import { useState } from 'react';
+import { ControlledModal } from './components/controlled-modal';
 
 function App() {
+  const [shouldDisplay, setShouldDisplay] = useState(false);
   return (
     <div
       style={{
@@ -11,9 +12,16 @@ function App() {
         borderRadius: '4px',
       }}
     >
-      <h3>Title: Uncontrolled form and Controlled form</h3>
-      {/* <UncontrolledForm /> */}
-      <ControlledForm />
+      <h3>Title:Controlled Modal</h3>
+      <button onClick={() => setShouldDisplay(!shouldDisplay)}>
+        {shouldDisplay ? 'Hide Modal' : 'Display Modal'}
+      </button>
+      <ControlledModal
+        shouldDisplay={shouldDisplay}
+        onClose={() => setShouldDisplay(false)}
+      >
+        <h3>I am the body of the modal</h3>
+      </ControlledModal>
     </div>
   );
 }
