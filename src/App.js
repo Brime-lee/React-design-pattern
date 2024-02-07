@@ -1,42 +1,20 @@
-import { UserInfo } from './components/user-info';
-import axios from 'axios';
-import { DataSourceWIthRender } from './components/data-source-with-render';
-import { DataSource } from './components/data-source';
+import { ControlledForm } from './components/controlled-form';
+import { UncontrolledForm } from './components/uncontrolled-form';
 
 function App() {
-  const getDataFromServer = async (url) => {
-    const response = await axios.get(url);
-    return response.data;
-  };
-
-  const getDataFromLocalStorage = (key) => () => {
-    return localStorage.getItem(key);
-  };
-
-  const Message = ({ msg }) => {
-    return <h1>{msg}</h1>;
-  };
-
   return (
-    <>
-      <DataSource
-        getData={() => getDataFromServer('/users/2')}
-        resourceName={'user'}
-      >
-        <UserInfo />
-      </DataSource>
-      {/* <DataSourceWIthRender
-        getData={() => getDataFromServer('/users/2')}
-        render={(resource) => <UserInfo user={resource} />}
-      ></DataSourceWIthRender>*/}
-
-      <DataSource
-        getData={() => getDataFromLocalStorage('test')}
-        resourceName={'msg'}
-      >
-        <Message />
-      </DataSource>
-    </>
+    <div
+      style={{
+        padding: '20px',
+        margin: '20px',
+        border: '1px solid #000 ',
+        borderRadius: '4px',
+      }}
+    >
+      <h3>Title: Uncontrolled form and Controlled form</h3>
+      {/* <UncontrolledForm /> */}
+      <ControlledForm />
+    </div>
   );
 }
 
