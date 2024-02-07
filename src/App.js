@@ -1,8 +1,31 @@
-import { useState } from 'react';
-import { ControlledModal } from './components/controlled-modal';
+import { UncontrolledFlow } from './components/uncontrolled-flow';
+
+const StepOne = ({ goNext }) => {
+  return (
+    <>
+      <h1>Step #1</h1>
+      <button onClick={goNext}>Next</button>
+    </>
+  );
+};
+const StepTwo = ({ goNext }) => {
+  return (
+    <>
+      <h1>Step #2</h1>
+      <button onClick={goNext}>Next</button>
+    </>
+  );
+};
+const StepThree = ({ goNext }) => {
+  return (
+    <>
+      <h1>Step #3</h1>
+      <button onClick={goNext}>Next</button>
+    </>
+  );
+};
 
 function App() {
-  const [shouldDisplay, setShouldDisplay] = useState(false);
   return (
     <div
       style={{
@@ -12,16 +35,12 @@ function App() {
         borderRadius: '4px',
       }}
     >
-      <h3>Title:Controlled Modal</h3>
-      <button onClick={() => setShouldDisplay(!shouldDisplay)}>
-        {shouldDisplay ? 'Hide Modal' : 'Display Modal'}
-      </button>
-      <ControlledModal
-        shouldDisplay={shouldDisplay}
-        onClose={() => setShouldDisplay(false)}
-      >
-        <h3>I am the body of the modal</h3>
-      </ControlledModal>
+      <h3>Title:UnControlled Flow</h3>
+      <UncontrolledFlow>
+        <StepOne />
+        <StepTwo />
+        <StepThree />
+      </UncontrolledFlow>
     </div>
   );
 }
